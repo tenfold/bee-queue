@@ -557,7 +557,7 @@ describe('Queue', (it) => {
       await t.notThrows(queue.createJob().save());
     });
 
-    it('should create a Queue with an existing ioredis instance', async (t) => {
+    it('should create a Queue with an existing ioredis cluster instance', async (t) => {
       const client = new Cluster([{port: 30001}, {port: 30002}]);
 
       t.true(redis.isCluster(client));
